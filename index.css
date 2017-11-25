@@ -1,0 +1,124 @@
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  font-size: 100%;
+}
+body {
+  background: #020220;
+  color: white;
+  cursor: default;
+  font-family: Open Sans, Arial, Verdana, sans-serif; 
+  position: relative;
+}
+.hide {
+  display: none;
+}
+div {
+/*  min-height: 100px; */
+  display: block;
+  padding: .5em .25em;
+ /* margin-bottom: .5em;
+  margin-bottom: .5rem; */
+  position: relative;
+}
+.canvas {
+  position: relative;
+  width: 100%;
+/*  min-height: 300px; */
+  margin: auto;
+}
+.canvasMod {
+  position: relative;
+  margin: auto;
+}
+.div2 {
+  margin-bottom: 0;
+}
+.div2.style_b > em {
+  display: block;
+}
+div.button {
+  display: inline-block;
+  width: 48%;
+  margin: auto;
+}
+div.button > button {
+  width: 100%;
+  height: 2em;
+  height: 2rem;
+  background: skyblue;
+}
+div.button > button:hover {
+  color: white;
+  background: black;
+}
+.div1 {
+  min-height: 200px;
+  margin-top: 0 !important;
+}
+.lpattern, .rpattern {
+  width: 50%;
+  height: .5em;
+  height: .5rem;
+  margin: 0;
+  padding: 0;
+  background: white;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.rpattern {
+  background: yellow;
+  left: 50%;
+}
+.style_a {
+  background: #CCC !important;
+  color: #000;
+  border: .25em 0 solid;
+  border-color: #FFF;
+}
+.style_a > p {
+  display: block;
+}
+.style_b {
+  background: #FFF;
+  border-bottom: .5em solid cyan;
+  color: #000;
+  font-weight: bold;
+  min-height: 160px;
+/*  height: 160px; */
+}
+.tint {
+  background: #21263a;
+}
+header {
+  font-size: 200%;
+  margin-bottom: .5em;
+}
+em {
+  font-family: Garamound, serif;
+}
+h1, h2, h3, h4 {
+  margin: .5em 0;
+}
+h1 {
+  font-size: 175%;
+}
+h2 {
+  font-size: 150%;
+}
+h3 {
+  font-size: 100%;
+  margin: .5em 0;
+}
+p {
+  font-size: 90%;
+  cursor: default;
+  display: block;
+}
+.clear {
+  clear: both;
+}

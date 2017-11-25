@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>WeightConversion - working jQuery Web Compatibility</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<!--    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="jsFiles/jquery_local.js"></script>
+    <script type="text/javascript" src="wc_query_vers.js?v=1"></script>
+<!--     <script type="text/javascript" src="weight_conversions.js?v=1"></script> -->
+    <style>
+/*      body {margin: auto; width: 640px;} */
+        ul{ list-style: none;}
+        .invisible {visibility: hidden;}
+        .visible {visibility: visible;}
+        footer {background: #020333; color: skyblue;}
+        body {
+            cursor: default;
+        }
+        #bwCalculations > span {
+            font-size: 200%;
+        }
+        #pg_add_wght {
+            font-size: 127%;
+            font-weight: bold;
+        }
+        #gfx_barbell {
+            background-image: url('images/barbell.png');
+            background-repeat: repeat-x;
+            min-width: 0px;
+            width: 0px;
+            height: 20px;
+            display: block;
+        }
+        #gfx_barbell_2{
+            background-image: url('images/barbell.jpg');
+            background-repeat: repeat-x;
+            min-width: 0px;
+            width: 0px;
+            height: 20px;
+            display: block;
+        }
+        section {
+            padding: 1em;
+        }
+        footer {
+            padding: 0 1em;
+        }
+        h3{
+            position: relative;
+        }
+        h3:after {
+            content: "Rev. 20171105";
+            font-size: 44%;
+            position: relative;
+            right: -20px;
+            color: #FFF;
+            background: orange;
+            padding: .25em;
+            border-radius: 3px;
+        }
+    </style>
+    </head>
+    <body>
+        <main>
+        <section id="sec_1">
+
+        <h1>Benchpress Formula</h1>
+        <h3>A lot fancier in web page form.</h3>
+        <p>All the extra code makes for an easier user experience.</p>
+        
+        <form><p>Enter Bodyweight:</p>
+            <input placeholder="Enter Number" type="numbers" id="body_wght"/>
+            <p class="frmFeed"></p>
+        </form>
+        </section>
+        <section id="bwCalculations" class="first"></section>
+        <ul class="output">
+            <li id="pg_all_wghts"></li>
+            <li id="pg_over"></li>
+            <li id="pg_add_wght"><p id="add_wght"></p><p id="pg_tadd"></p>
+            <span><button id="yes">Yes</button><button id="no">No</button><button id="remove">Remove Prev Added</button><button id="reset">Clear Bar of Weights</button></span></li>
+            <li id="pg_curr_barwght"></li>
+            <li><div id="gfx_barbell"></div></li>
+            <li><div id="gfx_barbell_2"></div></li>
+        </ul>
+        </section>
+        <footer id="foo_1">
+        <em>JS EventListeners are strange?</em>
+        
+        </footer>
+        
+        <section id="sec_2">
+        <header>
+        <h1>What's this..?</h1> 
+        <h3>Just a dolly toggle script.</h3>
+        <p>Well, it's only the css from the framework... How useful is this bootstrap css, anyway..? The buttons are styled well.</p>
+        <button id="dollyToggle">PlcHldr Button</button><br>
+        </header>
+        </section>
+        <footer id="foo_2"><em>Dolly functional is excellent now!</em>
+        </footer>
+        <br>
+        <h4 class="error">jQuery did not fix the onload inconsistency as anticipated... Also, jQuery conversion presents an additional issue involving sprite math.<br> The element is seemingly not returning proper width info for calcultion. Improved, still, the second barbell graphics are off.</h4>
+        <div class="preload invisible"><img src="images/barbell.png"><img src="images/barbell.jpg"></div>
+        </main>        
+    </body>
+</html>

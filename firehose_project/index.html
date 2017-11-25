@@ -1,0 +1,227 @@
+<html>
+
+<head>
+	<title>K. Jerry Alleyne | FE Web Page Exhibition | HTML | CSS | jQuery Plug</title>
+	<!--<meta name="description" content="K. Jery Alleyne is a professional
+				software engineer specializing in full-stack development.
+				He has extensive experience with Ruby, Rails, JavaScript,
+				and building web applications."> -->
+	<link rel="stylesheet" href="style.css" />
+	<!--	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+		<style>
+			body {
+				background-image: url('bg.jpg');
+			}
+		</style> -->
+	<link rel="stylesheet" href="prism-atom-dark.css" type="text/css" media="screen" />
+
+	<script type="text/javascript" src="prism.js"></script>
+	<script type="text/javascript" src="prism.ruby.js"></script>
+	
+</head>
+
+<body>
+	<div id="about" class="about-container">
+		<ul>
+			<li><a href="#about" class="nav-link">About</a></li>
+			<li><a href="#code-samples" class="nav-link">Code Samples</a></li>
+			<li><a href="#web-apps" class="nav-link">Web Apps</a></li>
+			<li><a href="#skills-and-tools" class="nav-link">Skills &amp; Tools</a></li>
+			<li class="hire-me"><a href="#hire-me" class="nav-link">Hire Me</a></li>
+		</ul>
+		<div class="about" />
+		<img class="me" src="http://bit.ly/2vyWeRW">
+		<h1>K. Jerry Alleyne</h1>
+		<h2>SOFTWARE ENGINEER</h2>
+		<hr class="grey" />
+		<p class="bio">Nam ante nisl, rutrum a neque vitae... Vestibulum purus orci, pharetra facilisis enim quis, convallis maximus leo. Praesent scelerisque, turpis et ullamcorper aliquam, urna ligula interdum nibh, nec condimentum diam quam eu nulla.
+		</p>
+	</div>
+	</div>
+	<h3 id="code-samples">Code Snippets</h3>
+	<hr class="yellow">
+
+	<div class="box">
+		<h4>Temperature Conversion</h4>
+		<p>This ruby program will prompt the user for a temperature in degrees Celsius and let the user know what the corresponding temperature is in Fahrenheit.</p>
+	</div>
+	<div class="box">
+		<pre><code class="language-ruby">puts &quot;Enter temperature in Celsius:&quot;
+degCels = gets.to_f
+
+def getFahrenheit(degCels)
+  sum = (degCels * 1.8) + 32
+  return sum
+end
+valsum = getFahrenheit(degCels)
+puts &quot;#{degCels} degrees celsuis or #{valsum}F.&quot;</code></pre>
+	</div>
+	<br class="clear" />
+	<div class="box">
+		<pre><code class="language-ruby">n = gets.to_i
+
+#more concise syntax used
+def ordinal(n)
+  ending = case n % 100
+           when 11, 12, 13 then 'th'
+           else
+             case n % 10
+             when 1 then 'st'
+             when 2 then 'nd'
+             when 3 then 'rd'
+             else 'th'
+             end
+           end
+
+  puts &quot;This is #{n}#{ending} item&quot;
+end
+puts ordinal(n)</code></pre>
+	</div>
+	<div class="box">
+		<h4>Ordinal Challenge</h4>
+		<p>This ruby program will convert a plain number to the ordinal of the number. So for example, if the user enters 2, it will display 2nd, if the user enters 3, it will display 3rd, etc.</p>
+	</div>
+	<br class="clear" />
+	<div class="box">
+		<h4>Foobar</h4>
+		<p>This ruby program is an adaptation of a classic technical interview problem which displays sequences of the Foobar pattern.</p>
+	</div>
+	<div class="box">
+		<pre><code class="language-ruby">puts &quot;How many items do you want to see?&quot;
+
+n = gets.to_i
+#fbar_array = ['1','2', 'Foo', '4', 'Bar','Foo','7','8','9'] #if array already had items
+fbar_array = [0]
+dbl_array = fbar_array #doubles original array for security
+
+#################################
+## Matching 'n' for Foobar ######
+#################################
+def divisible(n)
+  if n != nil
+  # divisibles  
+  bythree = (n % 3)
+  byfive = (n % 5)
+  byboth = bythree + byfive
+  #
+
+    if byboth == 0
+#      puts &quot;Foobar&quot;
+      text = &quot;Foobar&quot;
+      
+    elsif byfive == 0
+#      puts &quot;Bar&quot;
+      text = &quot;Bar&quot;
+
+    elsif bythree == 0
+#      puts &quot;Foo&quot;
+      text = &quot;Foo&quot;
+      
+    return text
+    end
+
+  end
+
+end
+#puts &quot;Your input matches #{divisible(n)}!&quot;
+
+##########################################
+## Makes array as long as user desires ###
+## &amp; inserts strings accordingly.#########
+##########################################
+
+while (fbar_array.length &lt; n)
+  x = (n - dbl_array.length)
+  countup = dbl_array.length
+
+    x.times do
+    n = countup
+    y = divisible(n)      
+    dbl_array &lt;&lt; &quot;#{countup}&quot; unless (y == &quot;Foobar&quot;) || (y == &quot;Bar&quot;) || (y == &quot;Foo&quot;)
+    countup = countup + 1
+      if (y == &quot;Foobar&quot;) || (y == &quot;Bar&quot;) || (y == &quot;Foo&quot;)
+        dbl_array &lt;&lt; &quot;#{y}&quot;
+        y = nil #resets y afer this push for next loop, just in case
+      end
+    end
+
+end
+##########################################
+
+puts dbl_array.to_s #to string for user readability
+puts &quot;Item Count: #{dbl_array.length}&quot;</code></pre>
+	</div>
+	<br class="clear" />
+	<h3 id="web-apps">Web Apps</h3>
+	<hr class="yellow" />
+
+	<div class="box">
+		<h4>Quote Generator</h4>
+		<img src="splurty.png" class="full-width" />
+		<p>A database-powered quote generator with a mobile-first design, using the Ruby on Rails framework, HTML, and CSS. Uses Git and GitHub for version control, and launched on Heroku.
+		</p>
+	</div>
+	<div class="box">
+		<h4>Yelp Clone</h4>
+		<img src="nomster.png" class="full-width" />
+		<p>
+			A Yelp clone that integrates with the Google Maps API and includes features like user comments, star ratings, image uploading, and user authentication.
+		</p>
+	</div>
+	<br class="clear" />
+
+	<div class="box">
+		<h4>Two-Sided Market Place</h4>
+		<img src="flixter.png" class="full-width" />
+		<p>
+			A two-sided, video-streaming marketplace platform that features credit card payment capabilities, user role management, complex user interfaces, and advanced database relationships.
+		</p>
+	</div>
+	<div class="box">
+		<h4>Test Driven Development</h4>
+		<img src="grammable.png" class="full-width" />
+		<p>
+			An Instagram clone that was built using industry-standard, test-driven development following numerous red/green/refactor cycles.
+		</p>
+	</div>
+	<br class="clear" />
+	<div class="box">
+		<h4>Single Page Todo Application</h4>
+		<img src="todoster.png" class="full-width" />
+		<p>
+			This single-page to-do application features a fluid user interface that– by using JavaScript– allows users to rapidly add dynamic content.
+		</p>
+	</div>
+	<div class="box">
+		<h4>Agile Team Project</h4>
+		<img src="chess.png" class="full-width" />
+		<p>
+			Worked on an Agile software development team building a chess application. Under the guidance of a senior software engineer, we had weekly Agile team meetings for code reviews, sprint planning, and feature assignments.
+		</p>
+	</div>
+	<br class="clear" />
+	<h3 id="skills-and-tools">Skills &amp; Tools</h3>
+	<hr class="yellow" />
+	<p class="skills-and-tools">I have developed proficiency and expertise in the following programming languages and comfort with the following tools.</p>
+	<div class="icons">
+		<img src="github.png" />
+		<img src="rubocop.png" />
+		<img src="trello.png" />
+		<img src="slack.png" />
+		<img src="codeship.png" />
+		<br class="clear" />
+		<img src="skills.png" />
+	</div>
+	<br class="clear" />
+	<div class="contact-me" id="hire-me">
+		<h3 class="contact-headline">Contact</h3>
+		<hr class="yellow" />
+		<p class="contact-info">
+			Currently entertaining new opportunities. Please get in touch via email: <a href="mailto:kjalleyne@hotmail.com" class="contact-link">kjalleyne@hotmail.com</a>
+		</p>
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Raw JavaScript Art</title>
+        <style>
+            canvas { position: relative; background: rgb(151,244,247);}
+            button { width: 100px; height: 1em;}
+        </style>
+    </head>
+    <body onload="draw()">
+<!--        <button onclick="draw()">Test Button</button> -->
+        <canvas id="myCanvas"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var y = 70;
+            
+            function draw() {
+            var ctx = c.getContext('2d');
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 20, 300, 150);
+            ctx.clearRect(20, y, 100, 50);
+
+            y = y+ 1;
+        }
+        </script>
+        </body>
+</html>
